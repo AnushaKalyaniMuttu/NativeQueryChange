@@ -1,1 +1,6 @@
 
+// Create and execute a native SQL query
+String sqlQuery = "SELECT * FROM your_table WHERE some_column = :condition";
+Query nativeQuery = entityManager.createNativeQuery(sqlQuery, YourEntity.class);
+nativeQuery.setParameter("condition", yourDynamicValue);
+List<YourEntity> resultList = nativeQuery.getResultList();
